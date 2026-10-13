@@ -1,5 +1,7 @@
 id: instalace-nastroju
 title: 00 – Instalace nástrojů
+# Readable without signing in, so learners can install the tools before the course.
+public: true
 parts:
   - 01-windows.md
   - 02-macos.md

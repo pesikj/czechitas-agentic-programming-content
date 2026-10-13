@@ -44,6 +44,8 @@ parts:            # order = order shown to learners
 
 A `.md` file in the directory that isn't listed in `parts` won't be shown (warning).
 
+Optional `public: true` (next to `title`) makes the lecture and its images readable without signing in, and the sign-in page links to it. Use it only for material learners need before the course, such as tool installation; everything else stays sign-in only.
+
 ### Part file
 
 Each part must start with front matter that contains only `id` and `title`:
