@@ -1,0 +1,6 @@
+# Lekce 00 obsahuje návrh instalačního návodu.
+title: Agentní programování s Codex CLI a Claude Code
+toc:
+  - title: Začínáme
+    items:
+      - lecture: 00-instalace

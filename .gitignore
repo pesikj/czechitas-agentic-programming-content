@@ -1,0 +1,9 @@
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Personal Claude Code settings (the shared skill stays committed)
+.claude/settings.local.json

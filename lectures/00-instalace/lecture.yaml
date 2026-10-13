@@ -1,0 +1,5 @@
+id: instalace-nastroju
+title: 00 – Instalace nástrojů
+parts:
+  - 01-windows.md
+  - 02-macos.md
