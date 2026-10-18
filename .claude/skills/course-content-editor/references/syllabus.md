@@ -2,6 +2,10 @@
 
 Source: the course outline Google Doc "osnova_python_ai". If the user says the syllabus has changed, update this file.
 
+**Numbering (organizer, 2026-10-18):** lecture numbers match the course directories. Lecture 1 is the installation guide (`lectures/01-instalace/`), and the ten teaching lectures are 2–11.
+
+**Changed by the organizer on 2026-10-18:** lecture 3 is now about logs and Git. The original topics of that lecture (`if/elif/else`, operators, strings, numbers, lists, reading and changing existing code) don't have a lecture yet.
+
 **Audience:** complete beginners with no programming experience. They need a paid ChatGPT Plus plan (Codex); Claude Pro (Claude Code) is an alternative that works slightly differently.
 
 **Core message:** AI won't think for you. You use it as a partner that helps design, explain, write, test and fix code, while you understand what is being built and why.
@@ -12,16 +16,17 @@ Source: the course outline Google Doc "osnova_python_ai". If the user says the s
 
 | # | Topic | What the learner actually learns | Not yet / limits |
 |---|---|---|---|
-| 1 | Python v době AI + první program | What development with AI looks like today, Codex vs. regular chat, VS Code, terminal, running Python, first script. Variables, data types, `print()`, `input()`. The difference between "AI built something" and "I understand what it built" | No conditions, loops or functions |
-| 2 | Podmínky a práce s daty | `if/elif/else`, operators, strings, numbers, lists. Reading and changing existing code. First small tasks with Codex: explain → propose a change → change → verify | No functions, no Git |
-| 3 | Cykly, funkce a struktura programu | `for`, `while`, functions, parameters, return values. Breaking a problem into smaller parts. Knowing where to change AI-generated code | No Git yet |
-| 4 | Terminál, Git a GitHub | Files and directories, terminal commands, `pip`, dependencies. Git: repository, status, add, commit, diff, history. GitHub. Markdown/README. Why version control matters when working with an agent | |
-| 5 | Codex: od promptování k agentnímu vývoji | What a coding agent is, the context window, instructions, permissions. **explore → plan → code → test → commit**. Let the agent understand the project first instead of generating code right away | |
-| 6 | Návrh vlastní aplikace s AI | Product thinking, kept light: problem, user, inputs/outputs, MVP, Definition of Done. Breaking the app into features. Making a plan with the agent. Start of the final project | |
-| 7 | Debugging a testování s AI | Error messages, traceback, `print()` debugging, finding the cause instead of rewriting code at random. Basic automated tests. Checking that an AI fix didn't break something else | |
-| 8 | Kontext, bezpečnost, pokročilá práce s agentem | Managing context on a longer project, memory/instructions, permissions, secrets and sensitive data. Security of AI-written code. **Skills and MCP only as a practical taste** | No deep dive into Skills or MCP |
-| 9 | Od Python kódu k aplikaci | Finishing the project, packages, dependencies, configuration. What deployment means. Docker only as far as deployment needs it. Deployment and fixing problems after it | Docker only to the extent it is needed |
-| 10 | Project lab: dokončení, audit, prezentace | Independent work with mentor support. Tests, code review with the agent, a basic security check, README, final commit. Presentation and reflection: what the AI wrote vs. what I understand | |
+| 1 | Instalace nástrojů | Preparatory installation guide (Windows, macOS): VS Code, Git, uv, Python, Codex or Claude Code, GitHub account, Docker Desktop for later | Not a teaching session |
+| 2 | Python v době AI + první program | What development with AI looks like today, Codex vs. regular chat, VS Code, terminal, running Python, first script. Variables, data types, `print()`, `input()`. The difference between "AI built something" and "I understand what it built" | No conditions, loops or functions |
+| 3 | Logy a Git | Logging: log levels, writing logs to a file, finding what happened in a log, reading and summarizing logs with AI. Git: repository, status, add, commit, diff, history, branches. Remote repositories and GitHub in theory: push, pull, clone, pull request, merge. Why version control matters when working with an agent | GitHub hands-on comes in lecture 5 |
+| 4 | Cykly, funkce a struktura programu | `for`, `while`, functions, parameters, return values. Breaking a problem into smaller parts. Knowing where to change AI-generated code | |
+| 5 | Terminál a GitHub | Files and directories, terminal commands, `pip`, dependencies. GitHub (Git itself is taught in lecture 3). Markdown/README | |
+| 6 | Codex: od promptování k agentnímu vývoji | What a coding agent is, the context window, instructions, permissions. **explore → plan → code → test → commit**. Let the agent understand the project first instead of generating code right away | |
+| 7 | Návrh vlastní aplikace s AI | Product thinking, kept light: problem, user, inputs/outputs, MVP, Definition of Done. Breaking the app into features. Making a plan with the agent. Start of the final project | |
+| 8 | Debugging a testování s AI | Error messages, traceback, `print()` debugging, finding the cause instead of rewriting code at random. Basic automated tests. Checking that an AI fix didn't break something else | |
+| 9 | Kontext, bezpečnost, pokročilá práce s agentem | Managing context on a longer project, memory/instructions, permissions, secrets and sensitive data. Security of AI-written code. **Skills and MCP only as a practical taste** | No deep dive into Skills or MCP |
+| 10 | Od Python kódu k aplikaci | Finishing the project, packages, dependencies, configuration. What deployment means. Docker only as far as deployment needs it. Deployment and fixing problems after it | Docker only to the extent it is needed |
+| 11 | Project lab: dokončení, audit, prezentace | Independent work with mentor support. Tests, code review with the agent, a basic security check, README, final commit. Presentation and reflection: what the AI wrote vs. what I understand | |
 
 ## Course-level learning outcomes
 

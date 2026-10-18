@@ -80,10 +80,9 @@ Zavřete a znovu otevřete PowerShell. Postupně spusťte:
 uv --version
 uv run python --version
 git --version
-code --version
 ```
 
-Každý příkaz má vypsat verzi nástroje. Potom spusťte `code` a ověřte, že se otevře Visual Studio Code.
+Každý příkaz má vypsat verzi nástroje.
 
 Pokud jste nainstalovali Docker, nechte Docker Desktop spuštěný a zadejte `docker version`. Výstup má obsahovat části **Client** i **Server**.
 

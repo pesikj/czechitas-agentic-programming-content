@@ -5,12 +5,23 @@ title: Terminál
 
 # Terminál: jak s počítačem mluví AI
 
-Nástroje máš nainstalované. V téhle lekci zjistíš, jak AI agent pracuje s tvým počítačem a co to vlastně znamená *programovat*. Projdeme čtyři témata, která na sebe navazují:
+Minule sis nainstaloval(a) uv, Python, VS Code, Git a AI agenta. Dnes je poprvé použiješ: zjistíš, jak agent pracuje s tvým počítačem a co to vlastně znamená *programovat*. Projdeme pět témat, která na sebe navazují:
 
-1. **Terminál** – textové rozhraní, přes které agent (i ty) ovládá počítač.
+1. **Terminál** – textové rozhraní, přes které agent (i ty) ovládá počítač, a projekt ve VS Code, ve kterém budeš pracovat.
 2. **Programová logika** – jak rozložit úkol na přesné kroky, kterým rozumí počítač.
 3. **Programovací jazyky** – v čem se tyhle kroky zapisují a co potřebuješ k jejich spuštění.
 4. **AI, vibe coding a agentní programování** – jak dnes kód píše AI a proč je pořád důležité, abys mu rozuměl(a) ty.
+5. **Chyby, výjimky a balíčky** – jak program selhává, jak se před chybami chránit a jak do projektu přidat hotový nástroj od jiných lidí.
+
+**Proč to potřebuješ:** Agent ti napíše kód za pár vteřin, ale sám nepozná, jestli dělá to, co jsi chtěl(a). V lekci uvidíš program na sčítání nákupu, který bez jediné chybové hlášky sečte koruny s eury a vypíše nesmysl. Takovou chybu odhalíš jen tehdy, když rozumíš tomu, co agent v terminálu dělá, umíš si postup programu rozmyslet sám(a) a přečteš, co program hlásí, když selže. Na těchhle základech stojí celý kurz – použiješ je pokaždé, když budeš s agentem stavět vlastní aplikaci.
+
+**Po lekci budeš umět:**
+- Umíš se pohybovat v terminálu (`pwd`, `cd`, `ls`) a zkontrolovat, jaké příkazy spustil agent.
+- Umíš rozložit úkol na přesné kroky, zapsat je jako pseudokód a ověřit je v trasovací tabulce.
+- Víš, čím se liší Python, JavaScript, TypeScript a Rust a co potřebuješ ke spuštění kódu.
+- Víš, čím se liší AI v chatu, vibe coding a agentní programování, a umíš si od agenta nechat nejdřív navrhnout plán.
+- Umíš přečíst traceback, rozlišit syntaktickou chybu od chyby za běhu a posoudit opravu od agenta.
+- Víš, kdy výjimka chybu schová, a umíš přidat do projektu balíček příkazem `uv add`.
 
 Začínáme terminálem, protože ho budeš potřebovat ve všech dalších částech: v terminálu spouštíš programy, ověřuješ nainstalované nástroje a v terminálu pracuje i AI agent.
 
@@ -53,7 +64,7 @@ Otevři terminál. Po spuštění se nacházíš ve své *domovské složce* (an
 
 ::::alternatives
 :::option{label="Windows"}
-Otevři **PowerShell** z nabídky Start, stejně jako při instalaci v lekci 00.
+Otevři **PowerShell** z nabídky Start, stejně jako při instalaci v lekci 01.
 
 Nejdřív zjisti, kde jsi. Příkaz `pwd` (*print working directory*) vypíše aktuální složku:
 
@@ -173,23 +184,41 @@ Pozor na jednu věc: co agent v terminálu přečte, posílá jazykovému modelu
 
 ## Cvičení: Nejnovější a nejstarší soubor
 
-Zeptej se agenta, který soubor nebo složka v tvé domovské složce je nejnovější a který nejstarší. Sleduj, jaké příkazy agent spustil, a výsledek si ověř sám(a) – v terminálu, nebo seřazením podle data v Průzkumníku či Finderu.
+Tentokrát si role prohodíte: AI příkaz jen navrhne a spustíš ho ty. Zjistíš, jaké to je pracovat v terminálu sám(a), a uvidíš, co by jinak agent dělal na pozadí.
+
+Požádej agenta (nebo klidně ChatGPT v prohlížeči – nic spouštět nebude), aby ti napsal příkaz, kterým zjistíš nejnovější a nejstarší soubor nebo složku ve své domovské složce. Do zadání uveď, jaký máš systém a shell, a výslovně napiš, že příkaz nemá spouštět.
+
+Prompt pro agenta:
+
+```text
+Pracuji na Windows v PowerShellu (nebo: na macOS v zsh).
+Napiš mi příkaz, kterým zjistím nejnovější a nejstarší soubor
+nebo složku ve své domovské složce. Příkaz nespouštěj,
+jen ho napiš a vysvětli, co dělá která jeho část.
+```
+
+Než příkaz spustíš, přečti si ho a vysvětlení. Příkaz má jen vypisovat a řadit – pokud v něm uvidíš něco jako mazání (`rm`, `del`, `Remove-Item`), nespouštěj ho a zeptej se, proč tam je. Pak příkaz zkopíruj do terminálu, spusť ho a z výstupu sám(a) urči nejnovější a nejstarší položku. Pokud příkaz skončí chybou, pošli chybovou hlášku agentovi a požádej o opravu.
+
+Nakonec výsledek ověř seřazením podle data v Průzkumníku nebo ve Finderu.
 
 Všimni si, že zadání není úplně přesné. Znamená "nejstarší" datum vytvoření, nebo poslední změny? A počítají se i skryté soubory? Podívej se, jak si to agent vyložil – a jestli se tě na to zeptal.
 
 ```exercise
 id: nejnovejsi-nejstarsi
-revision: 1
+revision: 2
 title: Nejnovější a nejstarší soubor
 fields:
   - id: prompt
     label: Použitý prompt
-  - id: prikazy
-    label: Příkazy, které agent spustil
-    guidance: Opiš je. Poznáš, co který příkaz dělá? Na co se můžeš agenta zeptat, pokud ne?
+  - id: prikaz
+    label: Příkaz, který agent navrhl
+    guidance: Opiš ho. Co dělá která jeho část? Bylo v něm něco, čemu jsi nerozuměl(a)?
+  - id: vystup
+    label: Výstup v terminálu
+    guidance: Zkopíruj důležitou část výstupu. Fungoval příkaz napoprvé, nebo jsi musel(a) žádat o opravu?
   - id: overeni
     label: Výsledek a ověření
-    guidance: Jaký soubor agent označil za nejnovější a nejstarší? Shoduje se to s tím, co vidíš v Průzkumníku nebo ve Finderu?
+    guidance: Kterou položku jsi z výstupu určil(a) jako nejnovější a kterou jako nejstarší? Shoduje se to s Průzkumníkem nebo Finderem?
   - id: presnost
     label: Jak si agent vyložil "nejstarší"?
     guidance: Podle data vytvoření, nebo změny? Zeptal se tě, nebo si to rozhodl sám?

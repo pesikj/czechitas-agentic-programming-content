@@ -1,6 +1,6 @@
 ---
 name: course-content-editor
-description: Write, update, review and restructure lecture materials for the Czechitas course "Programování s AI" (Python + Codex/Claude Code for beginners) in this content repository. Use this skill whenever the user wants to add or edit a lecture, part, exercise or example, shorten or simplify existing material, check that content matches the syllabus, add use cases, reorder or split lectures, or edit course.yaml / lecture.yaml — even if they just say "uprav lekci 3", "doplň příklad", "zkontroluj obsah" or "tohle je moc složité".
+description: Write, update and restructure lecture materials for the Czechitas course "Programování s AI" (Python + Codex/Claude Code for beginners) in this content repository. Use this skill whenever the user wants to add or edit a lecture, part, exercise or example, shorten or simplify existing material, check that content matches the syllabus, add use cases, reorder or split lectures, or edit course.yaml / lecture.yaml — even if they just say "uprav lekci 3", "doplň příklad" or "tohle je moc složité". For review-only requests ("zkontroluj", "zrecenzuj") use course-content-reviewer instead.
 ---
 
 # Course content editor
@@ -20,16 +20,34 @@ Every change should leave the content in three states:
 3. **Check.** Run the validator (see "Validation"), then review your edit against the checklist.
 4. **Report.** Briefly tell the user what changed, any syllabus conflicts you noticed, and the validator result. Don't paste the whole lecture back.
 
-When the user asks only for a review ("zkontroluj"), don't edit anything. List the problems by file and line, ordered by impact, and offer to fix them.
+When the user asks only for a review ("zkontroluj"), use the `course-content-reviewer` skill and don't edit anything.
 
 ## Lecture structure
 
 Every lecture has these four sections, in this order. **Úvod and Obsah go together into one content part file**, and a content part should be long: about **3–5 A4 pages** (roughly 1,500–3,000 words), structured with `##`/`###` headings. Don't split content into many short part files; start a new content part only when the current one would exceed about 5 pages. **Shrnutí and Kam dál are always two separate part files** at the end of the lecture, and you must update both every time the lecture content changes.
 
-1. **Úvod** (introduction): a short summary of what the lecture covers and the motivation for it. Say what problem the learner will be able to solve by the end and why it matters for their own app. Link back to what they learned last time. Keep it to a few sentences.
+1. **Úvod** (introduction): every lecture starts with it, at the top of the first content part and before the first concept. It has three elements, in this order:
+   - **What we will cover:** the topics of the lecture as a short numbered list, in the order they come, with one sentence each. Open with a sentence linking back to the previous lecture.
+   - **Why (motivation):** why these topics are taught, and why now. Name the problem the learner will be able to solve, why it matters for their own app and for working with the agent, and how it builds on what they already know. Use 2–4 sentences.
+   - **Competences:** 3–5 concrete skills the learner gains, phrased as "Umíš..." / "Víš, kdy...". This is the promise that Shrnutí fulfils, and every competence from the introduction must appear there.
+
+   Keep the whole introduction to about half an A4 page, for example:
+
+   ```markdown
+   Minule jsi ... Dnes na to navážeme:
+
+   1. **Téma** – jedna věta, o čem to je.
+   2. **Další téma** – ...
+
+   **Proč to potřebuješ:** ...
+
+   **Po lekci budeš umět:**
+   - Umíš ...
+   - Víš, kdy ...
+   ```
 2. **Obsah** (content): the concepts of the lecture, one after another, with each concept built as described below.
-3. **Shrnutí** (conclusion): a summary of what we learned, as a short list of concrete skills ("Umíš...", "Víš, kdy..."), not a list of topic names.
-4. **Kam dál** (next steps): proposals for extending the knowledge, such as a small extra task for the learner's project, something to try with the agent, or 1–3 good resources. Add one sentence previewing the next lecture.
+3. **Shrnutí** (conclusion): a summary of what we learned, as a list of **at most 5 bullets** with concrete skills ("Umíš...", "Víš, kdy..."), not topic names. The organizer wants learners to take away the few things that matter, not a checklist of every term. When the lecture teaches more, merge related skills into one bullet and leave out details.
+4. **Kam dál** (next steps): **at most 5 bullets** with proposals for extending the knowledge, such as a small extra task for the learner's project, something to try with the agent, or a good resource. Keep the optional "Chceš vědět víc?" link line and one sentence previewing the next lecture below the bullets; they don't count toward the limit.
 
 When you extend an existing lecture, put new material in the content part and update the introduction, `Shrnutí` and `Kam dál` so they still describe the lecture accurately.
 
@@ -88,9 +106,10 @@ Good use cases are concrete (real file names, real numbers), reachable at the le
 
 ## Keeping content "in check"
 
-- **Syllabus fit.** The topic belongs to this lecture according to `references/syllabus.md`, and it doesn't jump ahead. For example, don't use functions in lecture 2 or Git in lecture 3. If the user wants something that conflicts with the syllabus, make the change and point out the conflict.
+- **Syllabus fit.** The topic belongs to this lecture according to `references/syllabus.md`, and it doesn't jump ahead. For example, don't use Git in lecture 2 or deployment before lecture 10. If the user wants something that conflicts with the syllabus, make the change and point out the conflict.
 - **Consistency.** Use the same term for the same thing throughout. Before introducing a new name, check how earlier lectures named it (`grep -ri` the repository).
 - **Correctness.** Commands and code must actually work for a beginner on macOS and Windows. Don't invent CLI flags or tool features. If you aren't sure about current Codex or Claude Code behaviour, say so instead of guessing.
+- **Downloadable files.** Store files that learners download (data such as CSV, sample code) in the lecture's `data/` folder and link them with a relative Markdown link from the part, e.g. `[nakup.csv](data/nakup.csv)`. Never link to the GitHub repository or `raw.githubusercontent.com`, and don't build download commands (`curl`) on repository URLs.
 - **Safety.** Never put real API keys, passwords or personal data in examples. Use obvious placeholders such as `TVUJ_API_KLIC`.
 - **Exercises.** Keep them optional and short, with a clear result the learner can verify.
 
@@ -108,6 +127,8 @@ Fix every `ERROR` (an error blocks publishing). Fix warnings unless there's a re
 
 - [ ] The whole lecture was read before editing, and the new text fits it
 - [ ] The lecture has Úvod → Obsah → Shrnutí → Kam dál, and the intro and conclusion match the content
+- [ ] Úvod lists the topics, explains why they are taught, and names the competences, and each competence appears in Shrnutí
+- [ ] Shrnutí and Kam dál each have at most 5 bullets
 - [ ] Each concept has a use case, a simple explanation and practical use (code, command or prompt)
 - [ ] Transitions connect the concepts into one logical story
 - [ ] Matches the syllabus and builds only on earlier lectures

@@ -37,11 +37,9 @@ uv python install
 
 ## 4. Visual Studio Code
 
-Nainstalujte [Visual Studio Code](https://formulae.brew.sh/cask/visual-studio-code):
+Stáhněte [Visual Studio Code pro macOS](https://code.visualstudio.com/download) z oficiálního webu. Rozbalte stažený soubor `.zip` a aplikaci **Visual Studio Code** přesuňte do složky **Aplikace**. Při prvním spuštění macOS upozorní, že aplikace pochází z internetu; potvrďte **Otevřít**.
 
-```bash
-brew install --cask visual-studio-code
-```
+Aby šlo VS Code spouštět z Terminálu příkazem `code`, otevřete ve VS Code paletu příkazů (`⌘ Shift P`), napište `shell command` a vyberte **Shell Command: Install 'code' command in PATH**. Potom zavřete a znovu otevřete Terminál.
 
 ## 5. Docker Desktop – na pozdější část kurzu
 
@@ -59,10 +57,12 @@ Vyberte produkt, který máte předplacený s přístupem ke kódovacímu agento
 
 ::::alternatives
 :::option{label="Codex"}
-Nainstalujte [desktopovou aplikaci ChatGPT](https://formulae.brew.sh/cask/chatgpt) a [Codex CLI](https://formulae.brew.sh/cask/codex):
+**Aplikace:** stáhněte [ChatGPT pro macOS](https://openai.com/chatgpt/download/) z oficiálního webu. Otevřete stažený soubor `.dmg` a aplikaci **ChatGPT** přetáhněte do složky **Aplikace**.
+
+**CLI:** nainstalujte [Codex CLI](https://formulae.brew.sh/cask/codex) pomocí Homebrew:
 
 ```bash
-brew install --cask chatgpt codex
+brew install --cask codex
 ```
 
 Otevřete **ChatGPT** z Aplikací, přihlaste se účtem s předplatným a vyberte [režim **Codex**](https://learn.chatgpt.com/docs/app).
@@ -70,10 +70,12 @@ Otevřete **ChatGPT** z Aplikací, přihlaste se účtem s předplatným a vyber
 V novém okně Terminálu ověřte instalaci příkazem `codex --version`. Potom spusťte `codex` a zvolte přihlášení přes **ChatGPT** se stejným účtem jako v aplikaci.
 :::
 :::option{label="Claude Code"}
-Nainstalujte [desktopovou aplikaci Claude](https://formulae.brew.sh/cask/claude) a [Claude Code CLI](https://code.claude.com/docs/en/setup):
+**Aplikace:** stáhněte [Claude pro macOS](https://claude.com/download) z oficiálního webu. Otevřete stažený soubor `.dmg` a aplikaci **Claude** přetáhněte do složky **Aplikace**.
+
+**CLI:** nainstalujte [Claude Code CLI](https://code.claude.com/docs/en/setup) pomocí Homebrew:
 
 ```bash
-brew install --cask claude claude-code
+brew install --cask claude-code
 ```
 
 Otevřete **Claude** z Aplikací, přihlaste se účtem s předplatným a otevřete záložku **Code**.
@@ -91,10 +93,9 @@ brew --version
 uv --version
 uv run python --version
 git --version
-code --version
 ```
 
-Každý příkaz má vypsat verzi nástroje. Potom spusťte `code` a ověřte, že se otevře Visual Studio Code.
+Každý příkaz má vypsat verzi nástroje.
 
 Pokud jste nainstalovali Docker, nechte Docker Desktop spuštěný a zadejte `docker version`. Výstup má obsahovat části **Client** i **Server**.
 

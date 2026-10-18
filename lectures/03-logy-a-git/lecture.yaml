@@ -1,0 +1,7 @@
+id: logy-a-git
+title: 03 – Logy a Git
+parts:
+  - 01-logy.md                    # Úvod lekce + logy (přesunuto z lekce 02)
+  - 02-git.md                     # Git (zatím jen teorie)
+  - 03-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 04-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

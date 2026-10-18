@@ -9,6 +9,54 @@ Teď už víš, jak agent ovládá počítač přes terminál. Než ho necháš 
 
 Celou dobu nás bude provázet jeden malý příklad: program, který sčítá ceny nákupu – nejdřív jen v korunách, později i v eurech. Na konci budeš umět popsat jeho logiku, poznat, v jakém jazyce je napsaný, a vysvětlit, jak bys ho postavil(a) s pomocí AI agenta.
 
+## Nový projekt ve VS Code
+
+> **Kdy se to hodí:** Program na sčítání nákupu bude mít víc souborů: kód, data, později i záznamy o chybách. Chceš je mít pohromadě na jednom místě, vidět je v editoru a spouštět je v terminálu, aniž bys je musel(a) hledat.
+
+Než začneme, připravíme si *projekt*. Ve VS Code je projekt prostě složka (adresář), ve které jsou všechny soubory jedné aplikace. Když složku otevřeš ve VS Code, editor ti ukáže všechny její soubory, terminál ve VS Code se v ní rovnou spustí a v téže složce bude pracovat i agent. Do projektu `nakup` budeš ukládat všechno z této lekce.
+
+### 1. Vytvoř složku
+
+V terminálu přejdi do Dokumentů a vytvoř v nich složku `nakup`:
+
+```bash
+cd Documents
+mkdir nakup
+cd nakup
+```
+
+Příkaz `mkdir` (*make directory*) vytvoří novou složku. Tyhle příkazy fungují stejně v PowerShellu i v zsh.
+
+### 2. Otevři složku ve VS Code
+
+Nejrychleji to jde z terminálu, ve kterém právě jsi:
+
+```bash
+code .
+```
+
+Příkaz `code` spustí VS Code a tečka znamená "aktuální složka". VS Code se tedy otevře rovnou ve složce `nakup`.
+
+Složku můžeš otevřít i bez terminálu. Ve VS Code klikni v horním menu na **File → Open Folder...** (v české verzi **Soubor → Otevřít složku...**), najdi v Dokumentech složku `nakup` a potvrď tlačítkem **Select Folder** (Windows) nebo **Open** (macOS).
+
+### 3. Potvrď důvěru
+
+Při prvním otevření se VS Code zeptá, jestli důvěřuješ autorům souborů ve složce (*Do you trust the authors of the files in this folder?*). Složku jsi právě vytvořil(a) sám(a), takže zvol **Yes, I trust the authors**. U složek stažených z neznámých zdrojů buď opatrnější – VS Code se ptá právě proto, že v nich může být kód, který se spustí sám.
+
+### 4. Zorientuj se
+
+V levém panelu **Explorer** (Průzkumník) uvidíš název složky `NAKUP`. Zatím je prázdná, soubory do ní přibudou během lekce.
+
+Otevři terminál přímo ve VS Code: v menu zvol **Terminal → New Terminal** (**Terminál → Nový terminál**). Ve spodní části okna se objeví terminál – na Windows s PowerShellem, na macOS se zsh. Ověř, kde jsi:
+
+```bash
+pwd
+```
+
+Cesta na konci výpisu má končit složkou `nakup`. Od teď budeš všechny příkazy z lekce spouštět v tomhle terminálu.
+
+Ukázky kódu z této části zatím spouštět nemusíš. Pokud si je chceš vyzkoušet, vytvoř si v Exploreru soubor `zkouska.py` (ikona nového souboru vedle názvu složky), vlož do něj kód a spusť ho příkazem `uv run zkouska.py`.
+
 ## 2. Programová logika
 
 > **Kdy se to hodí:** Máš program, který sčítá ceny vybavení na výlet z českého e-shopu, a funguje bez chyby. Pak začneš nakupovat i v německém e-shopu a do seznamu přibudou ceny v eurech. Program dál běží, nic nehlásí – a přitom počítá nesmysly.
@@ -291,7 +339,7 @@ Agent umí psát v jakémkoli jazyce. Napsat kód ale nestačí: abys ho mohl(a)
 - **Interpretované jazyky** (Python, JavaScript) – potřebuješ *interpret* (anglicky *interpreter*), program, který čte tvůj kód a rovnou ho provádí. Pro Python je to interpret Pythonu, pro JavaScript například prohlížeč nebo Node.js.
 - **Překládané jazyky** (Rust) – potřebuješ *překladač* (anglicky *compiler*), který kód nejdřív *přeloží* do spustitelného souboru (ve Windows s příponou `.exe`). Ten pak spustíš jako jakýkoli jiný program. Překlad chvíli trvá, ale výsledný program bývá rychlejší.
 
-Interpret Pythonu už máš – nainstaloval(a) sis ho přes `uv` v lekci 00. Ověřit to můžeš v terminálu:
+Interpret Pythonu už máš – nainstaloval(a) sis ho přes `uv` v lekci 01. Ověřit to můžeš v terminálu:
 
 ```bash
 uv run python --version

@@ -111,6 +111,12 @@ Use at least two options, and give each one a `label`. Any other directive is sh
 - Alt text is required (warning). Describe what the image shows, in Czech.
 - External image URLs aren't protected by sign-in (warning). Store a copy in the repository instead.
 
+## Downloadable files
+
+Files for learners to download (CSV data, sample code) live in the lecture's `data/` folder and are linked with a relative Markdown link, for example `[nakup.csv](data/nakup.csv)`. Don't link to the GitHub repository.
+
+Note (2026-10-18): the website currently serves only images (`src/pages/obsah/[...path].ts` serves an allowlist of image assets), so relative links to other files don't work there until the website adds support for downloads.
+
 ## Markdown
 
 Use CommonMark + GFM: tables, task lists, strikethrough and autolinks. Raw HTML isn't rendered (warning), so use Markdown only.
