@@ -1,6 +1,7 @@
 id: python-v-dobe-ai
 title: 01 – Python v době AI
 parts:
-  - 01-programovani-v-dobe-ai.md  # Úvod + obsah (3–5 stran A4)
-  - 02-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
-  - 03-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu
+  - 01-terminal.md                # Úvod lekce + terminál
+  - 02-programovani-v-dobe-ai.md  # Programová logika, jazyky, AI (3–5 stran A4)
+  - 03-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 04-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

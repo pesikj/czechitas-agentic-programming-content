@@ -5,6 +5,10 @@ title: Shrnutí
 
 # Shrnutí
 
+- Umíš otevřít terminál, zjistit, kde jsi (`pwd`), přejít do složky (`cd`) a vypsat její obsah (`ls`).
+- Víš, že existuje víc shellů (Command Prompt, PowerShell, bash, zsh) a že se jejich příkazy můžou lišit.
+- Umíš vysvětlit, proč AI agent pracuje přes terminál: spustí příkaz na pozadí a přečte textovou odpověď.
+- Umíš zadat agentovi úkol na tvém počítači, zkontrolovat, jaké příkazy spustil, a ověřit jeho výsledek.
 - Umíš rozložit úkol na přesné kroky a zapsat je jako pseudokód.
 - Víš, že počítač udělá jen to, co mu výslovně řekneš – třeba že ceny v eurech musí nejdřív převést kurzem na koruny.
 - Víš, že když se změní data (třeba přibude nová měna), musíš zkontrolovat i kód – program může dál běžet bez chyby, a přitom počítat nesmysly.

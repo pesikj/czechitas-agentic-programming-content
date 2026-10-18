@@ -5,17 +5,11 @@ title: Programování v době AI
 
 # Programování v době AI
 
-Nástroje máš nainstalované. Než se pustíš do psaní kódu, ujasníme si, co to vlastně znamená *programovat* a jakou roli v tom dnes hraje umělá inteligence. Bez toho by práce s AI agentem připomínala zadávání úkolů v jazyce, kterému nerozumíš.
-
-V téhle části projdeš tři témata, která na sebe navazují:
-
-1. **Programová logika** – jak rozložit úkol na přesné kroky, kterým rozumí počítač.
-2. **Programovací jazyky** – v čem se tyhle kroky zapisují a proč jich existuje tolik.
-3. **AI, vibe coding a agentní programování** – jak dnes kód píše AI a proč je pořád důležité, abys mu rozuměl(a) ty.
+Teď už víš, jak agent ovládá počítač přes terminál. Než ho necháš psát kód, ujasníme si, co to vlastně znamená *programovat* a jakou roli v tom dnes hraje umělá inteligence. Bez toho by práce s AI agentem připomínala zadávání úkolů v jazyce, kterému nerozumíš.
 
 Celou dobu nás bude provázet jeden malý příklad: program, který sčítá ceny nákupu – nejdřív jen v korunách, později i v eurech. Na konci budeš umět popsat jeho logiku, poznat, v jakém jazyce je napsaný, a vysvětlit, jak bys ho postavil(a) s pomocí AI agenta.
 
-## 1. Programová logika
+## 2. Programová logika
 
 > **Kdy se to hodí:** Máš program, který sčítá ceny vybavení na výlet z českého e-shopu, a funguje bez chyby. Pak začneš nakupovat i v německém e-shopu a do seznamu přibudou ceny v eurech. Program dál běží, nic nehlásí – a přitom počítá nesmysly.
 
@@ -216,7 +210,7 @@ Proto se programová logika hodí dvakrát. Když agentovi dáš jasný postup (
 
 Programová logika je tedy dovednost, kterou AI nenahradí. Ty víš, co má program dělat a co znamenají data, se kterými pracuje. AI ti pomůže to zapsat.
 
-## 2. Programovací jazyky
+## 3. Programovací jazyky
 
 Postup už umíš sepsat česky. Počítač ale češtině nerozumí – potřebuje ho dostat v jazyce, který zná.
 
@@ -253,7 +247,7 @@ Chybová hláška vypadá děsivě, ale říká užitečné věci: v jakém soub
 
 Programovacích jazyků existují stovky. Vznikaly v různé době a pro různé účely, podobně jako různé nástroje v dílně: kladivem se dá zatlouct hřebík i rozbít ořech, ale na šroubek je lepší šroubovák. Některé jazyky jsou velmi rychlé, jiné snadno čitelné, další běží v prohlížeči nebo v pračce.
 
-Dobrá zpráva je, že myšlenky z první kapitoly – vstup, výstup, proměnné, rozhodování a opakování – najdeš skoro ve všech. Když pochopíš logiku v jednom jazyce, druhý se naučíš mnohem rychleji.
+Dobrá zpráva je, že myšlenky z kapitoly o programové logice – vstup, výstup, proměnné, rozhodování a opakování – najdeš skoro ve všech. Když pochopíš logiku v jednom jazyce, druhý se naučíš mnohem rychleji.
 
 ### Čtyři jazyky, jeden program
 
@@ -323,7 +317,7 @@ Ceny jsou v Kč a v EUR. Eura převeď na koruny kurzem 1 EUR = 25 Kč
 a vypiš celkovou cenu v Kč.
 ```
 
-## 3. AI, vibe coding a agentní programování
+## 4. AI, vibe coding a agentní programování
 
 Víš, co je program a v čem se píše. Dnes ho ale nemusíš psát celý sám(a) – velkou část kódu za tebe napíše AI. Pojďme si ujasnit, jak to funguje a jakou roli v tom máš ty.
 
@@ -345,7 +339,7 @@ Je dobré rozlišovat **model** a **nástroj**. Model je "mozek", který přemý
 
 ### Co LLM umí a co ne
 
-LLM odpověď *odhaduje* podle vzorů – nic nepočítá ani neověřuje. Proto může znít jistě, a přitom se mýlit. A na rozdíl od deterministického programu z první kapitoly ti na stejnou otázku může pokaždé odpovědět jinak. Například si vymyslí funkci, která v Pythonu neexistuje, nebo bez upozornění sečte koruny s eury.
+LLM odpověď *odhaduje* podle vzorů – nic nepočítá ani neověřuje. Proto může znít jistě, a přitom se mýlit. A na rozdíl od deterministického programu z kapitoly o programové logice ti na stejnou otázku může pokaždé odpovědět jinak. Například si vymyslí funkci, která v Pythonu neexistuje, nebo bez upozornění sečte koruny s eury.
 
 Model si také pamatuje jen omezené množství textu. Ve velmi dlouhé konverzaci začne zapomínat, co bylo na začátku, a plete se. S tím se naučíš pracovat v pozdějších lekcích.
 
@@ -406,7 +400,7 @@ V praxi se držíme postupu, ke kterému se budeme v kurzu stále vracet:
 4. **Otestuj** – ověříš, že program dělá, co má, a že se nic nerozbilo.
 5. **Ulož** – změnu si uložíš, aby ses k ní mohl(a) kdykoli vrátit.
 
-Všimni si, že psaní kódu je jen jeden krok z pěti. Ve zbylých čtyřech hraješ hlavní roli ty a právě v nich se uplatní programová logika z první kapitoly.
+Všimni si, že psaní kódu je jen jeden krok z pěti. Ve zbylých čtyřech hraješ hlavní roli ty a právě v nich se uplatní programová logika z druhé kapitoly.
 
 ### Tři způsoby práce s AI vedle sebe
 
@@ -431,7 +425,7 @@ Kód zatím nepiš. Nejdřív mi popiš kroky, které bude program dělat,
 a zeptej se mě, pokud ti něco v zadání chybí.
 ```
 
-Odpověď porovnej s pseudokódem z první kapitoly. Zeptal se agent, jaký kurz má použít? Pokud ne a kurz si sám zvolil, doplň mu ho do zadání – přesně takhle vypadá spolupráce, ve které práci řídíš ty.
+Odpověď porovnej s pseudokódem z kapitoly o programové logice. Zeptal se agent, jaký kurz má použít? Pokud ne a kurz si sám zvolil, doplň mu ho do zadání – přesně takhle vypadá spolupráce, ve které práci řídíš ty.
 
 ### Cvičení: Plán, nebo rovnou kód?
 
@@ -446,7 +440,7 @@ fields:
     label: Čím se odpovědi lišily?
   - id: kontrola
     label: Co jsi v kódu zkontroloval(a)
-    guidance: Odpovídají kroky pseudokódu z první kapitoly? Chybí něco, nebo je tam něco navíc?
+    guidance: Odpovídají kroky pseudokódu z kapitoly o programové logice? Chybí něco, nebo je tam něco navíc?
   - id: reflexe
     label: Který přístup by sis vybral(a) pro vlastní aplikaci a proč?
 ```
