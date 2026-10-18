@@ -24,14 +24,14 @@ When the user asks only for a review ("zkontroluj"), don't edit anything. List t
 
 ## Lecture structure
 
-Every lecture has these four sections, in this order. Each section is usually its own part file. Long content can span several parts.
+Every lecture has these four sections, in this order. **Úvod and Obsah go together into one content part file**, and a content part should be long: about **3–5 A4 pages** (roughly 1,500–3,000 words), structured with `##`/`###` headings. Don't split content into many short part files; start a new content part only when the current one would exceed about 5 pages. **Shrnutí and Kam dál are always two separate part files** at the end of the lecture, and you must update both every time the lecture content changes.
 
 1. **Úvod** (introduction): a short summary of what the lecture covers and the motivation for it. Say what problem the learner will be able to solve by the end and why it matters for their own app. Link back to what they learned last time. Keep it to a few sentences.
 2. **Obsah** (content): the concepts of the lecture, one after another, with each concept built as described below.
-3. **Shrnutí** (conclusion): a summary of what we learned, as a short list of concrete skills ("Umíš…", "Víš, kdy…"), not a list of topic names.
+3. **Shrnutí** (conclusion): a summary of what we learned, as a short list of concrete skills ("Umíš...", "Víš, kdy..."), not a list of topic names.
 4. **Kam dál** (next steps): proposals for extending the knowledge, such as a small extra task for the learner's project, something to try with the agent, or 1–3 good resources. Add one sentence previewing the next lecture.
 
-When you extend an existing lecture, put new material in the content section and update the introduction and conclusion so they still describe the lecture accurately.
+When you extend an existing lecture, put new material in the content part and update the introduction, `Shrnutí` and `Kam dál` so they still describe the lecture accurately.
 
 ### Building one concept
 
@@ -46,18 +46,24 @@ An optional exercise can follow when the learner should try the concept themselv
 ### Logical flow
 
 All parts of the text should read as one connected story, not a collection of separate notes:
-- Give each concept a sentence that connects it to the previous one ("Teď už umíš X. Co když ale…").
+- Give each concept a sentence that connects it to the previous one ("Teď už umíš X. Co když ale...").
 - Prefer a single running example that grows through the lecture (for example, the same small app) over a new unrelated example for each concept.
 - The introduction promises what the conclusion summarises, and the conclusion leads into the next steps.
 - When you add or move content, reread the neighbouring paragraphs and fix any transition the change broke.
 
 ## Writing rules
 
-**Language and voice.** Write in Czech and address the learner informally with *ty*. The course is primarily for women, so use feminine forms where gender shows ("zvládla jsi", "budeš schopná"). Keep established English terms the learner will meet in tools (commit, prompt, repository, traceback, MCP) and explain each one in one short sentence the first time it appears.
+**Language and voice.** Write in Czech and address the learner informally with *ty*. Address both genders: where the learner's gender shows, write the masculine form with the feminine ending in brackets, for example "myslel(a)", "zvládl(a) jsi", "sám(a)", "jistý(á)". Never write only the feminine or only the masculine form. Words that refer to something else, such as "AI sama píše" or "práce vypadala", keep their normal form. Keep established English terms the learner will meet in tools (commit, prompt, repository, traceback, MCP) and explain each one in one short sentence the first time it appears.
+
+**Terminology.** Say "programová logika", never "programátorská logika" (the organizer considers it offensive).
+
+**Quotation marks.** Always use straight double quotes `"..."`. Never use Czech typographic quotes `„` and `“` (or `”`), not even in Czech prose.
+
+**Ellipsis.** Always write three normal dots `...`. Never use the single ellipsis character `…`.
 
 **Concise means:**
 - One idea per paragraph, and paragraphs of at most about 4 sentences.
-- Prefer short parts. If a part needs heavy scrolling, split it into a new part file.
+- Keep sentences and paragraphs short, but not the part: a content part is about 3–5 A4 pages. Use headings so the learner can navigate it.
 - Explain *what it is*, *why it matters*, and *how to use it*. Leave out internals, history, edge cases and alternatives unless the lecture is about them.
 - If a detail is true but not needed for today's task, cut it. If it might help some learners, add one link to the "Chceš vědět víc?" line at the end.
 - Avoid jargon chains ("tokenizace kontextového okna LLM"). Replace them with an analogy or a concrete effect ("agent si pamatuje jen omezené množství textu — dlouhá konverzace ho začne mást").
@@ -106,7 +112,7 @@ Fix every `ERROR` (an error blocks publishing). Fix warnings unless there's a re
 - [ ] Transitions connect the concepts into one logical story
 - [ ] Matches the syllabus and builds only on earlier lectures
 - [ ] No paragraph or detail the learner doesn't need for this lecture
-- [ ] Czech, *ty*, feminine forms, terms explained on first use
+- [ ] Czech, *ty*, both genders in the "myslel(a)" bracket style, terms explained on first use
 - [ ] Code, commands and prompts in the correct fenced blocks, and they work
 - [ ] IDs are unchanged for existing parts and exercises, and new IDs are unique
 - [ ] An exercise `revision` is increased only when its meaning changed

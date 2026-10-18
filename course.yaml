@@ -4,3 +4,6 @@ toc:
   - title: Začínáme
     items:
       - lecture: 00-instalace
+  - title: Základy
+    items:
+      - lecture: 01-python-v-dobe-ai

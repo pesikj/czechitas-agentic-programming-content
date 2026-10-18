@@ -9,8 +9,9 @@ course.yaml
 lectures/
   01-python-a-ai/
     lecture.yaml
-    01-uvod.md
-    02-prvni-program.md
+    01-python-a-ai.md
+    02-shrnuti.md
+    03-kam-dal.md
     images/
       vscode-terminal.png
 ```
@@ -35,11 +36,9 @@ A lecture directory that isn't listed in the `toc` won't be shown (warning).
 id: python-a-ai
 title: Python v době AI + první program
 parts:            # order = order shown to learners
-  - 01-uvod.md            # Úvod: summary and motivation
-  - 02-prvni-program.md   # Obsah: one or more concept parts
-  - 03-promenne.md
-  - 04-shrnuti.md         # Shrnutí: what we learned
-  - 05-kam-dal.md         # Kam dál: next steps
+  - 01-python-a-ai.md     # Úvod + Obsah: one content part of about 3–5 A4 pages
+  - 02-shrnuti.md         # Shrnutí: what we learned, updated with every content change
+  - 03-kam-dal.md         # Kam dál: next steps, updated with every content change
 ```
 
 A `.md` file in the directory that isn't listed in `parts` won't be shown (warning).
@@ -56,7 +55,7 @@ id: prvni-program
 title: První program
 ---
 
-Text…
+Text...
 ```
 
 ## IDs

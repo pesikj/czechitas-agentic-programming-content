@@ -1,6 +1,6 @@
 # Course memory
 
-Last updated: 2026-10-07.
+Last updated: 2026-10-18.
 
 Source: [Agentic Coding Brainstorming](agentic-coding-brainstorming.md), exported from the [shared conversation](https://chatgpt.com/share/6ac63eba-fa6c-83ed-a88a-3921231acd3f). This file records course context from that discussion; it is not a finalized syllabus.
 
@@ -42,9 +42,14 @@ Source: [Agentic Coding Brainstorming](agentic-coding-brainstorming.md), exporte
 - Deployment should be included, primarily using the Django application. Render was suggested by the assistant; the provider was not explicitly finalized. Pricing and free-tier claims in the transcript are historical suggestions, not verified course requirements.
 - The organizer requested advanced agent usage, including skills and memory. The assistant proposed instruction files, MCP, and sub-agents, followed by a capstone; the final lecture allocation remains a proposal.
 
+## Lecture format (confirmed by the organizer, 2026-10-18)
+
+- The introduction and all content of a lecture are merged into one content part of about **3–5 A4 pages**; do not split content into many short parts.
+- **Shrnutí** and **Kam dál** stay as separate parts and are updated iteratively every time the lecture content changes.
+
 ## Not yet established
 
-Repository status: the organizer requested removal of placeholder lectures 01–03. Only preparatory lecture 00 remains in the course navigation; this does not change the planned ten-lecture course scope.
+Repository status: the organizer requested removal of placeholder lectures 01–03. Lecture 01 (`lectures/01-python-v-dobe-ai/`) was then started on 2026-10-18 at the organizer's request with programming logic, programming languages (Python, JavaScript, TypeScript, Rust; C was removed at the organizer's request) and the tools needed to run code (interpreter, compiler) and definitions of AI, vibe coding and agentic coding, adapted from the Macaly vibe coding course lesson 1. The first-program part (variables, `print()`, `input()`) is not written yet. This does not change the planned ten-lecture course scope.
 
 - Exact session duration, dates, frequency, and delivery mode (online or in person).
 - Enrollment size, instructors, homework expectations, assessment, or certification.
