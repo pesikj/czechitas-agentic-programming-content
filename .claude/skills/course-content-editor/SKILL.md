@@ -24,9 +24,9 @@ When the user asks only for a review ("zkontroluj"), use the `course-content-rev
 
 ## Lecture structure
 
-Every lecture has these four sections, in this order. **Úvod and Obsah go together into one content part file**, and a content part should be long: about **3–5 A4 pages** (roughly 1,500–3,000 words), structured with `##`/`###` headings. Don't split content into many short part files; start a new content part only when the current one would exceed about 5 pages. **Shrnutí and Kam dál are always two separate part files** at the end of the lecture, and you must update both every time the lecture content changes.
+Every lecture has these four sections, in this order. **Úvod is its own part file, `01-uvod.md`** (front matter `id: uvod`, `title: Úvod`), listed first in `lecture.yaml`, so the website shows it as a separate page before the content. The organizer wants learners to see the lecture's plan on its own page, not mixed into the first topic. **Obsah** follows in content parts, and a content part should be long: about **3–5 A4 pages** (roughly 1,500–3,000 words), structured with `##`/`###` headings. Don't split content into many short part files; start a new content part only when the current one would exceed about 5 pages. **Shrnutí and Kam dál are always two separate part files** at the end of the lecture, and you must update both every time the lecture content changes.
 
-1. **Úvod** (introduction): every lecture starts with it, at the top of the first content part and before the first concept. It has three elements, in this order:
+1. **Úvod** (introduction): every lecture starts with it, as the separate first part `01-uvod.md`. Its main heading is the lecture name without the number (for example `# Python v době AI`). It has three elements, in this order:
    - **What we will cover:** the topics of the lecture as a short numbered list, in the order they come, with one sentence each. Open with a sentence linking back to the previous lecture.
    - **Why (motivation):** why these topics are taught, and why now. Name the problem the learner will be able to solve, why it matters for their own app and for working with the agent, and how it builds on what they already know. Use 2–4 sentences.
    - **Competences:** 3–5 concrete skills the learner gains, phrased as "Umíš..." / "Víš, kdy...". This is the promise that Shrnutí fulfils, and every competence from the introduction must appear there.
@@ -34,6 +34,13 @@ Every lecture has these four sections, in this order. **Úvod and Obsah go toget
    Keep the whole introduction to about half an A4 page, for example:
 
    ```markdown
+   ---
+   id: uvod
+   title: Úvod
+   ---
+
+   # Název lekce
+
    Minule jsi ... Dnes na to navážeme:
 
    1. **Téma** – jedna věta, o čem to je.
@@ -126,7 +133,7 @@ Fix every `ERROR` (an error blocks publishing). Fix warnings unless there's a re
 ## Final checklist
 
 - [ ] The whole lecture was read before editing, and the new text fits it
-- [ ] The lecture has Úvod → Obsah → Shrnutí → Kam dál, and the intro and conclusion match the content
+- [ ] The lecture has Úvod (separate part `01-uvod.md`) → Obsah → Shrnutí → Kam dál, and the intro and conclusion match the content
 - [ ] Úvod lists the topics, explains why they are taught, and names the competences, and each competence appears in Shrnutí
 - [ ] Shrnutí and Kam dál each have at most 5 bullets
 - [ ] Each concept has a use case, a simple explanation and practical use (code, command or prompt)

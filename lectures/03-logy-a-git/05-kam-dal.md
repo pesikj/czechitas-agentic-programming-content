@@ -13,4 +13,4 @@ title: Kam dál
 
 Chceš vědět víc? [Logging HOWTO v dokumentaci Pythonu](https://docs.python.org/3/howto/logging.html) · [Kniha Pro Git v češtině](https://git-scm.com/book/cs/v2)
 
-Příště se podíváš podrobněji na cykly a funkce a na to, jak rozdělit program na menší části, ve kterých se vyznáš ty i agent.
+Příště začneš stavět větší aplikaci v prohlížeči, evidenci firem a obchodů, a naučíš se nechat agenta nejdřív připravit plán.

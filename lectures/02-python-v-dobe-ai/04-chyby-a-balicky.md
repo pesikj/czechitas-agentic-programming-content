@@ -222,7 +222,7 @@ Program nespadl. Jenže výsledek je špatně – chybí v něm karimatka za 590
 
 Z toho plyne důležité pravidlo: **výjimka má chybu ošetřit, ne schovat.** Když ti agent navrhne `try` a `except`, vždy se podívej, co se stane v bloku `except`. Pokud chybu jen potichu "spolkne", zeptej se, jak se o ní dozvíš.
 
-## Balíčky: hotové nástroje od jiných
+## Balíčky a uv
 
 > **Kdy se to hodí:** Kurz eura je v programu napevno, ale skutečný kurz najdeš každý den na internetu. Aby si ho program stáhl sám, potřebuje umět mluvit s webem. Psát to od nuly by bylo zbytečné – někdo už to napsal za tebe.
 
@@ -230,9 +230,20 @@ Z toho plyne důležité pravidlo: **výjimka má chybu ošetřit, ne schovat.**
 
 Balíčky se stahují z veřejného katalogu [PyPI](https://pypi.org/) a do projektu je přidáš nástrojem `uv`. Vyzkoušíš to na balíčku `requests`, který umí stahovat data z internetu.
 
+### Co dělá uv
+
+`uv` znáš z lekce 01: nainstaloval(a) jsi jím Python a spouštíš jím programy. Ve skutečnosti je to správce celého projektu. Stará se o čtyři věci:
+
+- **Python** – stáhne a nainstaluje správnou verzi Pythonu (`uv python install`).
+- **Projekt** – vede si seznam toho, co projekt potřebuje, v souboru `pyproject.toml`.
+- **Balíčky** – stáhne je z PyPI a uloží do projektu.
+- **Spouštění** – `uv run` spustí program s Pythonem a balíčky právě tohoto projektu.
+
+Každý projekt má balíčky ve vlastní složce `.venv` (*virtuální prostředí*, anglicky *virtual environment*). Představ si ji jako krabici s nářadím, která patří jen k jednomu projektu. Když jeden projekt potřebuje starší verzi balíčku a druhý novější, každý má svou krabici a navzájem si nepřekážejí.
+
 ### 1. Udělej ze složky projekt pro uv
 
-Seznam balíčků projektu si uv vede v souboru `pyproject.toml`. V terminálu ve VS Code (pořád ve složce `nakup`) ho jednou vytvoř:
+V terminálu ve VS Code (pořád ve složce `nakup`) spusť jednou:
 
 ```bash
 uv init --bare
@@ -244,13 +255,59 @@ Výstup:
 Initialized project `nakup`
 ```
 
+uv vytvořil soubor `pyproject.toml`, *popis projektu*. Otevři ho ve VS Code:
+
+```text
+[project]
+name = "nakup"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+```
+
+- `name` a `version` – název projektu (podle složky) a jeho verze.
+- `requires-python` – nejstarší verze Pythonu, se kterou projekt poběží. U tebe se číslo může lišit.
+- `dependencies` – seznam balíčků, které projekt potřebuje. Zatím je prázdný.
+
+Přepínač `--bare` (anglicky "holý") znamená "vytvoř jen to nejnutnější", tedy jen `pyproject.toml`. Bez něj by `uv init` přidal ještě:
+
+- ukázkový kód programu – ten nepotřebuješ, program `nakup.py` už máš,
+- soubor `README.md` pro popis projektu,
+- soubor `.python-version`, který určí přesnou verzi Pythonu pro projekt,
+- složku `.git` a soubor `.gitignore` – ze složky by se stal repozitář Gitu.
+
+Git poznáš až v příští lekci a repozitář si v projektu zapneš sám(a). Proto teď `--bare` použij. U nového projektu, kde chceš všechno najednou, můžeš `uv init` spustit i bez něj.
+
 ### 2. Přidej balíček
 
 ```bash
 uv add requests
 ```
 
-uv stáhne `requests` i balíčky, které `requests` sám potřebuje, a zapíše ho do `pyproject.toml`. Otevři soubor ve VS Code, uvidíš v něm:
+Výstup (zkrácený, verze se u tebe budou lišit):
+
+```text
+Creating virtual environment at: .venv
+Installed 5 packages in 7ms
+ + certifi==2026.10.19
+ + charset-normalizer==3.5.2
+ + idna==3.20
+ + requests==2.34.2
+ + urllib3==2.8.0
+```
+
+Přidal(a) jsi jeden balíček, ale nainstalovalo se jich pět. `requests` totiž sám používá další balíčky a uv je stáhl s ním. Balíčkům, které projekt potřebuje, se říká *závislosti* (anglicky *dependencies*). Celý strom ti ukáže příkaz `uv tree`:
+
+```text
+nakup v0.1.0
+└── requests v2.34.2
+    ├── certifi v2026.10.19
+    ├── charset-normalizer v3.5.2
+    ├── idna v3.20
+    └── urllib3 v2.8.0
+```
+
+V `pyproject.toml` teď uvidíš:
 
 ```text
 dependencies = [
@@ -258,9 +315,32 @@ dependencies = [
 ]
 ```
 
-Číslo verze se u tebe může lišit. V Exploreru přibude ještě soubor `uv.lock` s přesnými verzemi všech stažených balíčků a složka `.venv`, kam se balíčky uložily. Do obou ručně nezasahuj, spravuje je uv.
+V Exploreru přibyly ještě dvě věci:
 
-### 3. Jak requests funguje
+- `uv.lock` – přesné verze všech stažených balíčků. Díky němu dostane každý, kdo si projekt stáhne, úplně stejné verze jako ty.
+- `.venv` – složka, kam se balíčky uložily.
+
+Do obou ručně nezasahuj, spravuje je uv. Zapamatuj si rozdělení: `pyproject.toml` říká, *co* projekt potřebuje, `uv.lock` *v jakých přesných verzích*, a `.venv` obsahuje samotné stažené balíčky.
+
+### 3. Spouštěj programy přes uv run
+
+`uv run nakup.py` nespustí jen Python. Nejdřív zkontroluje, že balíčky ve `.venv` odpovídají `pyproject.toml` a `uv.lock`, a co chybí, doinstaluje. Teprve pak program spustí, a to s balíčky z `.venv`.
+
+Proto programy v projektu spouštěj vždy přes `uv run`. Kdybys napsal(a) jen `python pocasi.py`, mohl by se spustit Python, který o `.venv` neví, a program by skončil chybou `ModuleNotFoundError: No module named 'requests'`. Když tuhle chybu uvidíš, zkontroluj dvě věci: jestli spouštíš přes `uv run` a jestli je balíček v `pyproject.toml` (pokud ne, přidej ho přes `uv add`).
+
+Další příkazy uv, které se ti budou hodit:
+
+| Příkaz | Co dělá |
+|---|---|
+| `uv add requests` | přidá balíček do projektu |
+| `uv remove requests` | odebere balíček z projektu i z `.venv` |
+| `uv tree` | ukáže balíčky projektu a jejich závislosti |
+| `uv sync` | nainstaluje do `.venv` přesně to, co je v `uv.lock`, třeba když si projekt stáhneš na jiný počítač |
+| `uv run python --version` | ukáže verzi Pythonu, kterou projekt používá |
+
+Agent tyhle příkazy používá také. Když uvidíš, že chce spustit `uv add`, podívej se, jaký balíček přidává, a pokud nevíš proč, zeptej se ho.
+
+### 4. Jak requests funguje
 
 Prohlížeč pošle webu *požadavek* (anglicky *request*) a web mu vrátí *odpověď*: obvykle stránku s obrázky a tlačítky. Balíček `requests` dělá totéž, jen odpověď nevykreslí, ale předá ji programu jako text. Nejlépe se to ukáže na webu, který odpovídá rovnou obyčejným textem, třeba [wttr.in](https://wttr.in/) s předpovědí počasí – hodí se před výletem s novým spacákem.
 

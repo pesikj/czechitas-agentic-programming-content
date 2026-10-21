@@ -1,8 +1,9 @@
 id: python-v-dobe-ai
 title: 02 – Python v době AI
 parts:
-  - 01-terminal.md                # Úvod lekce + terminál
-  - 02-programovani-v-dobe-ai.md  # Programová logika, jazyky, AI
-  - 03-chyby-a-logy.md            # Chyby, funkce, výjimky, balíčky
-  - 04-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
-  - 05-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu
+  - 01-uvod.md                    # Úvod lekce – samostatná stránka
+  - 02-terminal.md                # Terminál
+  - 03-programovani-v-dobe-ai.md  # Programová logika, jazyky, AI
+  - 04-chyby-a-balicky.md         # Chyby, funkce, výjimky, balíčky a uv
+  - 05-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 06-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

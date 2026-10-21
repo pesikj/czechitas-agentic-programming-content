@@ -9,9 +9,10 @@ course.yaml
 lectures/
   01-python-a-ai/
     lecture.yaml
-    01-python-a-ai.md
-    02-shrnuti.md
-    03-kam-dal.md
+    01-uvod.md
+    02-python-a-ai.md
+    03-shrnuti.md
+    04-kam-dal.md
     images/
       vscode-terminal.png
 ```
@@ -36,9 +37,10 @@ A lecture directory that isn't listed in the `toc` won't be shown (warning).
 id: python-a-ai
 title: Python v době AI + první program
 parts:            # order = order shown to learners
-  - 01-python-a-ai.md     # Úvod + Obsah: one content part of about 3–5 A4 pages
-  - 02-shrnuti.md         # Shrnutí: what we learned, updated with every content change
-  - 03-kam-dal.md         # Kam dál: next steps, updated with every content change
+  - 01-uvod.md            # Úvod: a separate page with topics, motivation and competences
+  - 02-python-a-ai.md     # Obsah: one content part of about 3–5 A4 pages
+  - 03-shrnuti.md         # Shrnutí: what we learned, updated with every content change
+  - 04-kam-dal.md         # Kam dál: next steps, updated with every content change
 ```
 
 A `.md` file in the directory that isn't listed in `parts` won't be shown (warning).
@@ -46,6 +48,8 @@ A `.md` file in the directory that isn't listed in `parts` won't be shown (warni
 Optional `public: true` (next to `title`) makes the lecture and its images readable without signing in, and the sign-in page links to it. Use it only for material learners need before the course, such as tool installation; everything else stays sign-in only.
 
 ### Part file
+
+Part files are numbered from `01` in the order they are shown (`01-uvod.md`, `02-...`), confirmed by the organizer on 2026-10-18.
 
 Each part must start with front matter that contains only `id` and `title`:
 
