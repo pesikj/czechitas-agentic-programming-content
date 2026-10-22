@@ -1,0 +1,8 @@
+id: logy-a-git
+title: 03 – Chyby, balíčky a logy
+parts:
+  - 01-uvod.md                    # Úvod lekce – samostatná stránka
+  - 02-chyby-a-balicky.md         # Kód od agenta, funkce, chyby, výjimky, balíčky a uv
+  - 03-logy.md                    # Logy a jejich sledování s AI
+  - 04-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 05-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

@@ -434,7 +434,7 @@ Vibe coding se hodí na rychlé pokusy a prototypy, které zahodíš. Na aplikac
 
 *AI agent* je jazykový model, který nejen odpovídá, ale také *jedná*. Umí číst soubory v projektu, psát a upravovat kód, spouštět příkazy v terminálu a podle výsledku se rozhodnout, co udělá dál. Pracuje v krocích: něco zkusí, podívá se na výsledek a pokračuje.
 
-V kurzu budeme používat agenta **Codex** od OpenAI, alternativou je **Claude Code** od Anthropicu. Oba můžeš používat v terminálu i v desktopové aplikaci a oba si před důležitými akcemi (třeba úpravou souborů nebo spuštěním příkazu) umí říct o tvé svolení.
+V kurzu budeme používat agenta **Codex** od OpenAI, alternativou je **Claude Code** od Anthropicu. Oba můžeš používat v terminálu i v desktopové aplikaci a oba si před důležitými akcemi (třeba úpravou souborů nebo spuštěním příkazu) umí říct o tvé svolení. Jak to nastavit, uvidíš v další části.
 
 ### Agentní programování
 

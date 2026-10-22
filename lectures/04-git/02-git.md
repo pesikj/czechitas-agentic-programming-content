@@ -5,7 +5,7 @@ title: Git
 
 # Git: historie verzí programu
 
-Log ti řekne, co program dělal. Co když ale program přestane fungovat proto, že se změnil kód? Pak potřebuješ vědět, co přesně se změnilo, a umět se vrátit k verzi, která fungovala.
+Z minulé lekce víš, že log ti řekne, co program dělal. Co když ale program přestane fungovat proto, že se změnil kód? Pak potřebuješ vědět, co přesně se změnilo, a umět se vrátit k verzi, která fungovala. Git si vyzkoušíš na programu s nákupem. Od příští lekce ho budeš potřebovat pořád: při stavbě větší aplikace, kterou bude agent měnit krok za krokem.
 
 ## Co je Git
 
@@ -41,7 +41,7 @@ Git se dá ovládat příkazy v terminálu, ale ty budeš pracovat hlavně ve VS
 
 ### Výchozí kód projektu
 
-Git si vyzkoušíš na projektu `nakup`. Program od agenta se u každého liší, a tak ať máte všichni stejný začátek, nahraď obsah souboru `nakup.py` tímto kódem. Je to verze z minulé lekce s aktuálním kurzem ČNB a s logy z předchozí části:
+Git si vyzkoušíš na projektu `nakup`. Program od agenta se u každého liší, a tak ať máte všichni stejný začátek, nahraď obsah souboru `nakup.py` tímto kódem. Je to verze z minulé lekce s aktuálním kurzem ČNB a s logy:
 
 ```python
 import csv
@@ -320,7 +320,7 @@ Otevři `nakup.py` znovu, převod dalších měn už v něm je. Lokální větev
 
 ## Git a AI agent
 
-Git je pojítko mezi nástroji i mezi tebou a agentem. Pátý krok postupu agentního programování z minulé lekce, **Ulož**, v praxi znamená právě commit. Z toho plyne jednoduché pravidlo: **než necháš agenta měnit kód, udělej commit verze, která funguje.** Když se úprava nepovede, máš se kam vrátit.
+Git je pojítko mezi nástroji i mezi tebou a agentem. Pátý krok postupu agentního programování z lekce 02, **Ulož**, v praxi znamená právě commit. Z toho plyne jednoduché pravidlo: **než necháš agenta měnit kód, udělej commit verze, která funguje.** Když se úprava nepovede, máš se kam vrátit.
 
 Po práci agenta otevři panel Source Control a proklikej změněné soubory (v terminálu `git diff`). Uvidíš přesně ty řádky, které agent změnil, a ne jen jeho popis toho, co udělal. Tak poznáš, jestli změnil jen to, o co jsi žádal(a).
 

@@ -1,0 +1,8 @@
+id: nasazeni-railway
+title: 08 – Nasazení na Railway
+parts:
+  - 01-priprava.md                # Příprava na lekci – účet na Railway předem
+  - 02-uvod.md                    # Úvod lekce – samostatná stránka
+  - 03-nasazeni.md                # Nasazení, produkční nastavení, Railway, logy, rollback, cena
+  - 04-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 05-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

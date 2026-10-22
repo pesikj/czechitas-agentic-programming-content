@@ -4,6 +4,6 @@ parts:
   - 01-uvod.md                    # Úvod lekce – samostatná stránka
   - 02-terminal.md                # Terminál
   - 03-programovani-v-dobe-ai.md  # Programová logika, jazyky, AI
-  - 04-chyby-a-balicky.md         # Chyby, funkce, výjimky, balíčky a uv
+  - 04-nastaveni-agenta.md        # Režimy oprávnění, model, úroveň přemýšlení, limity
   - 05-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
   - 06-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

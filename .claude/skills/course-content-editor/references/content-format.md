@@ -49,7 +49,7 @@ Optional `public: true` (next to `title`) makes the lecture and its images reada
 
 ### Part file
 
-Part files are numbered from `01` in the order they are shown (`01-uvod.md`, `02-...`), confirmed by the organizer on 2026-10-18.
+Part files are numbered from `01` in the order they are shown (`01-uvod.md`, `02-...`), confirmed by the organizer on 2026-10-18. When a lecture needs individual preparation before the session, it comes first as `01-priprava.md` (`id: priprava`, `title: Příprava na lekci`) and the intro is `02-uvod.md` (organizer, 2026-10-21).
 
 Each part must start with front matter that contains only `id` and `title`:
 

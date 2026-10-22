@@ -1,0 +1,7 @@
+id: testovani
+title: 07 – Testování aplikace
+parts:
+  - 01-uvod.md                    # Úvod lekce – samostatná stránka
+  - 02-testovani.md               # Jednotkové, integrační a Playwright testy, testy a AI agent
+  - 03-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 04-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

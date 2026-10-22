@@ -1,0 +1,11 @@
+id: crm-a-planovani
+title: 05 – Aplikace CRM a plánování s agentem
+parts:
+  - 01-priprava.md                # Příprava na lekci – instalace PM Skills a Superpowers předem
+  - 02-uvod.md                    # Úvod lekce – samostatná stránka
+  - 03-crm.md                     # Aplikace CRM
+  - 04-produktova-analyza.md      # Produktové řízení, obchodní proces, deep research, roadmapa, metrika, PM Skills
+  - 05-brainstorming.md           # Brainstorming se Superpowers, návrh aplikace
+  - 06-plan.md                    # Plán (writing-plans), provedení, testy, dokončení větve
+  - 07-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 08-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu

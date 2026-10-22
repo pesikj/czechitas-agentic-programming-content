@@ -5,7 +5,7 @@ title: Chyby, výjimky a balíčky
 
 # Chyby, výjimky a balíčky
 
-Víš, co je program, umíš ho spustit v terminálu a víš, jak s tebou spolupracuje agent. Teď si program s nákupem opravdu necháš napsat, spustíš ho – a pak ho schválně rozbiješ. Uvidíš, jak vypadají chyby a jak se před nimi program může chránit. Nakonec do projektu přidáš hotový nástroj od jiných lidí a necháš program pracovat s aktuálním kurzem eura.
+Minule sis rozmyslel(a) logiku programu s nákupem, nastavil(a) agenta a víš, jak s tebou spolupracuje. Teď si program opravdu necháš napsat, spustíš ho – a pak ho schválně rozbiješ. Uvidíš, jak vypadají chyby a jak se před nimi program může chránit. Nakonec do projektu přidáš hotový nástroj od jiných lidí a necháš program pracovat s aktuálním kurzem eura.
 
 Tyhle principy potřebuješ znát, i když kód píše AI. Chyby se objeví vždycky a ty musíš poznat, co se stalo, a posoudit, jestli je oprava od agenta opravdu oprava.
 
@@ -13,7 +13,7 @@ Tyhle principy potřebuješ znát, i když kód píše AI. Chyby se objeví vžd
 
 > **Kdy se to hodí:** Seznam nákupu nechceš mít natvrdo v kódu. Když přidáš novou položku, chceš upravit jen seznam, ne program.
 
-Ceny z minulé části jsou teď v souboru `nakup.csv`. *CSV* (anglicky *comma-separated values*) je obyčejný textový soubor s tabulkou: každý řádek je jeden řádek tabulky a hodnoty jsou oddělené čárkou. První řádek obsahuje názvy sloupců.
+Ceny z minulé lekce jsou teď v souboru `nakup.csv`. *CSV* (anglicky *comma-separated values*) je obyčejný textový soubor s tabulkou: každý řádek je jeden řádek tabulky a hodnoty jsou oddělené čárkou. První řádek obsahuje názvy sloupců.
 
 ```text
 polozka,cena,mena
@@ -26,7 +26,7 @@ Láhev na vodu,249,CZK
 
 Měny jsou zapsané mezinárodními kódy: `CZK` pro koruny a `EUR` pro eura.
 
-Otevři ve VS Code projekt `nakup`, který sis vytvořil(a) na začátku minulé části. Stáhni soubor [nakup.csv](data/nakup.csv) a ulož ho do složky `nakup`. Ve VS Code se objeví v panelu Explorer. Ověř to i v terminálu ve VS Code:
+Otevři ve VS Code projekt `nakup`, který sis vytvořil(a) v minulé lekci. Stáhni soubor [nakup.csv](data/nakup.csv) a ulož ho do složky `nakup`. Ve VS Code se objeví v panelu Explorer. Ověř to i v terminálu ve VS Code:
 
 ```bash
 ls
@@ -172,7 +172,7 @@ Výpisu se říká *traceback* – stopa, kudy program šel, než spadl. Čti ho
 2. **Nad ním** je místo, kde k chybě došlo: řádek 12 ve funkci `cena_v_kc`.
 3. **Ještě výš** je místo, odkud byla funkce zavolaná: řádek 21.
 
-Všimni si, že chyba není v kódu, ale v datech. Program se data zatím nesnažil kontrolovat – předpokládal, že každá cena je číslo. Je to stejný druh problému jako s eury v minulé části: skrytý předpoklad o datech, který přestal platit.
+Všimni si, že chyba není v kódu, ale v datech. Program se data zatím nesnažil kontrolovat – předpokládal, že každá cena je číslo. Je to stejný druh problému jako s eury v minulé lekci: skrytý předpoklad o datech, který přestal platit.
 
 ## Oprava s pomocí AI
 
@@ -276,7 +276,7 @@ Přepínač `--bare` (anglicky "holý") znamená "vytvoř jen to nejnutnější"
 - soubor `.python-version`, který určí přesnou verzi Pythonu pro projekt,
 - složku `.git` a soubor `.gitignore` – ze složky by se stal repozitář Gitu.
 
-Git poznáš až v příští lekci a repozitář si v projektu zapneš sám(a). Proto teď `--bare` použij. U nového projektu, kde chceš všechno najednou, můžeš `uv init` spustit i bez něj.
+Git poznáš až v lekci 04 a repozitář si v projektu zapneš sám(a). Proto teď `--bare` použij. U nového projektu, kde chceš všechno najednou, můžeš `uv init` spustit i bez něj.
 
 ### 2. Přidej balíček
 

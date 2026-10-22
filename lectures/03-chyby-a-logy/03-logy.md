@@ -5,6 +5,8 @@ title: Logy
 
 # Logy: co se stalo, když jsi u toho nebyl(a)
 
+Výjimka zabrání tomu, aby program spadl. Jak se ale o chybě dozvíš, když ji program nevypíše a ty u něj zrovna nesedíš?
+
 > **Kdy se to hodí:** Program běží každý večer sám a ráno ti pošle součet útraty. Když se v noci něco pokazí, nikdo u toho nebyl. Potřebuješ záznam, ze kterého zjistíš, co se stalo.
 
 *Log* (česky *záznam* nebo *protokol*) je zpráva, kterou program zapisuje během své práce – obvykle do souboru. Každá zpráva má čas, *úroveň závažnosti* a text. Připomíná lodní deník: nezapisuje se do něj kvůli někomu konkrétnímu, ale když se něco stane, víš, kde hledat.
@@ -21,7 +23,7 @@ Python má pro logy připravený modul `logging`. Rozlišuje pět základních �
 
 Úrovně slouží jako filtr. Při běžném provozu zapisuješ třeba jen `INFO` a vyšší, při hledání chyby zapneš i `DEBUG`.
 
-Vyzkoušíš to na programu s nákupem. V `nakup.csv` znovu udělej u karimatky překlep `59O` z minulé lekce. Pokud máš verzi programu s aktuálním kurzem ze cvičení, budou se částky ve výstupu lišit od ukázek.
+Vyzkoušíš to na programu s nákupem. V `nakup.csv` znovu udělej u karimatky překlep `59O` z minulé části. Pokud máš verzi programu s aktuálním kurzem ze cvičení, budou se částky ve výstupu lišit od ukázek.
 
 Takhle vypadá program s logy. Na začátek přibude nastavení:
 

@@ -1,0 +1,7 @@
+id: git
+title: 04 – Git
+parts:
+  - 01-uvod.md                    # Úvod lekce – samostatná stránka
+  - 02-git.md                     # Git ve VS Code, GitHub, větev, pull request, review, merge
+  - 03-shrnuti.md                 # Shrnutí – aktualizovat při každé změně obsahu
+  - 04-kam-dal.md                 # Kam dál – aktualizovat při každé změně obsahu
